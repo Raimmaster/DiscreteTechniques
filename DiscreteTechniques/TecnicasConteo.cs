@@ -5,7 +5,7 @@ namespace Tecnicas
 {
     public class TecnicasConteo
     {
-        public MathTools mt;
+        private MathTools mt;
 
         public TecnicasConteo()
         {

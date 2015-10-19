@@ -51,7 +51,18 @@
             this.bCalcular = new System.Windows.Forms.Button();
             this.bReset = new System.Windows.Forms.Button();
             this.toolTipCasos = new System.Windows.Forms.ToolTip(this.components);
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbRA = new System.Windows.Forms.RadioButton();
+            this.rbRM = new System.Windows.Forms.RadioButton();
+            this.rbPC = new System.Windows.Forms.RadioButton();
+            this.rbCCR = new System.Windows.Forms.RadioButton();
+            this.rbCSR = new System.Windows.Forms.RadioButton();
+            this.rbVCR = new System.Windows.Forms.RadioButton();
+            this.rbVSR = new System.Windows.Forms.RadioButton();
+            this.rbPCR = new System.Windows.Forms.RadioButton();
+            this.rbPSR = new System.Windows.Forms.RadioButton();
             this.menu.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menu
@@ -63,7 +74,7 @@
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
             this.menu.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.menu.Size = new System.Drawing.Size(713, 28);
+            this.menu.Size = new System.Drawing.Size(910, 28);
             this.menu.TabIndex = 0;
             this.menu.Text = "menuStrip1";
             // 
@@ -147,7 +158,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(35, 56);
+            this.label1.Location = new System.Drawing.Point(35, 59);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 17);
             this.label1.TabIndex = 1;
@@ -156,7 +167,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(35, 93);
+            this.label2.Location = new System.Drawing.Point(35, 96);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(91, 17);
             this.label2.TabIndex = 2;
@@ -165,7 +176,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(35, 133);
+            this.label3.Location = new System.Drawing.Point(35, 136);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 17);
             this.label3.TabIndex = 3;
@@ -173,57 +184,190 @@
             // 
             // tEntradaN
             // 
-            this.tEntradaN.Location = new System.Drawing.Point(143, 56);
+            this.tEntradaN.Location = new System.Drawing.Point(143, 59);
             this.tEntradaN.Name = "tEntradaN";
             this.tEntradaN.Size = new System.Drawing.Size(64, 22);
             this.tEntradaN.TabIndex = 4;
+            this.tEntradaN.Text = "0";
             this.toolTipCasos.SetToolTip(this.tEntradaN, "En PCR, n es el total de elementos.");
             // 
             // tEntradaM
             // 
-            this.tEntradaM.Location = new System.Drawing.Point(143, 90);
+            this.tEntradaM.Enabled = false;
+            this.tEntradaM.Location = new System.Drawing.Point(143, 93);
             this.tEntradaM.Name = "tEntradaM";
             this.tEntradaM.Size = new System.Drawing.Size(64, 22);
             this.tEntradaM.TabIndex = 5;
+            this.tEntradaM.Text = "0";
             // 
             // tResultado
             // 
-            this.tResultado.Location = new System.Drawing.Point(143, 130);
+            this.tResultado.Location = new System.Drawing.Point(143, 133);
             this.tResultado.Name = "tResultado";
             this.tResultado.Size = new System.Drawing.Size(64, 22);
             this.tResultado.TabIndex = 6;
+            this.tResultado.Text = "0";
             // 
             // lExample
             // 
             this.lExample.AutoSize = true;
-            this.lExample.Location = new System.Drawing.Point(356, 55);
+            this.lExample.Location = new System.Drawing.Point(35, 237);
             this.lExample.Name = "lExample";
             this.lExample.Size = new System.Drawing.Size(0, 17);
             this.lExample.TabIndex = 7;
             // 
             // bCalcular
             // 
-            this.bCalcular.Location = new System.Drawing.Point(38, 185);
+            this.bCalcular.Location = new System.Drawing.Point(38, 173);
             this.bCalcular.Name = "bCalcular";
             this.bCalcular.Size = new System.Drawing.Size(75, 23);
             this.bCalcular.TabIndex = 8;
             this.bCalcular.Text = "Calcular";
             this.bCalcular.UseVisualStyleBackColor = true;
+            this.bCalcular.Click += new System.EventHandler(this.bCalcular_Click);
             // 
             // bReset
             // 
-            this.bReset.Location = new System.Drawing.Point(132, 185);
+            this.bReset.Location = new System.Drawing.Point(132, 173);
             this.bReset.Name = "bReset";
             this.bReset.Size = new System.Drawing.Size(75, 23);
             this.bReset.TabIndex = 9;
             this.bReset.Text = "Reset";
             this.bReset.UseVisualStyleBackColor = true;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rbRA);
+            this.groupBox1.Controls.Add(this.rbRM);
+            this.groupBox1.Controls.Add(this.rbPC);
+            this.groupBox1.Controls.Add(this.rbCCR);
+            this.groupBox1.Controls.Add(this.rbCSR);
+            this.groupBox1.Controls.Add(this.rbVCR);
+            this.groupBox1.Controls.Add(this.rbVSR);
+            this.groupBox1.Controls.Add(this.rbPCR);
+            this.groupBox1.Controls.Add(this.rbPSR);
+            this.groupBox1.Location = new System.Drawing.Point(234, 56);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(664, 137);
+            this.groupBox1.TabIndex = 11;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Técnicas";
+            // 
+            // rbRA
+            // 
+            this.rbRA.AutoSize = true;
+            this.rbRA.Location = new System.Drawing.Point(452, 101);
+            this.rbRA.Name = "rbRA";
+            this.rbRA.Size = new System.Drawing.Size(112, 21);
+            this.rbRA.TabIndex = 8;
+            this.rbRA.TabStop = true;
+            this.rbRA.Text = "Regla Aditiva";
+            this.rbRA.UseVisualStyleBackColor = true;
+            this.rbRA.CheckedChanged += new System.EventHandler(this.rbRA_CheckedChanged);
+            // 
+            // rbRM
+            // 
+            this.rbRM.AutoSize = true;
+            this.rbRM.Location = new System.Drawing.Point(214, 101);
+            this.rbRM.Name = "rbRM";
+            this.rbRM.Size = new System.Drawing.Size(150, 21);
+            this.rbRM.TabIndex = 7;
+            this.rbRM.TabStop = true;
+            this.rbRM.Text = "Regla Multiplicativa";
+            this.rbRM.UseVisualStyleBackColor = true;
+            this.rbRM.CheckedChanged += new System.EventHandler(this.rbRM_CheckedChanged);
+            // 
+            // rbPC
+            // 
+            this.rbPC.AutoSize = true;
+            this.rbPC.Location = new System.Drawing.Point(6, 101);
+            this.rbPC.Name = "rbPC";
+            this.rbPC.Size = new System.Drawing.Size(160, 21);
+            this.rbPC.TabIndex = 6;
+            this.rbPC.TabStop = true;
+            this.rbPC.Text = "Permutación Circular";
+            this.rbPC.UseVisualStyleBackColor = true;
+            this.rbPC.CheckedChanged += new System.EventHandler(this.rbPC_CheckedChanged);
+            // 
+            // rbCCR
+            // 
+            this.rbCCR.AutoSize = true;
+            this.rbCCR.Location = new System.Drawing.Point(452, 62);
+            this.rbCCR.Name = "rbCCR";
+            this.rbCCR.Size = new System.Drawing.Size(208, 21);
+            this.rbCCR.TabIndex = 5;
+            this.rbCCR.TabStop = true;
+            this.rbCCR.Text = "Combinación con Repetición";
+            this.rbCCR.UseVisualStyleBackColor = true;
+            this.rbCCR.CheckedChanged += new System.EventHandler(this.rbCCR_CheckedChanged);
+            // 
+            // rbCSR
+            // 
+            this.rbCSR.AutoSize = true;
+            this.rbCSR.Location = new System.Drawing.Point(214, 62);
+            this.rbCSR.Name = "rbCSR";
+            this.rbCSR.Size = new System.Drawing.Size(203, 21);
+            this.rbCSR.TabIndex = 4;
+            this.rbCSR.TabStop = true;
+            this.rbCSR.Text = "Combinación sin Repetición";
+            this.rbCSR.UseVisualStyleBackColor = true;
+            this.rbCSR.CheckedChanged += new System.EventHandler(this.rbCSR_CheckedChanged);
+            // 
+            // rbVCR
+            // 
+            this.rbVCR.AutoSize = true;
+            this.rbVCR.Location = new System.Drawing.Point(7, 62);
+            this.rbVCR.Name = "rbVCR";
+            this.rbVCR.Size = new System.Drawing.Size(186, 21);
+            this.rbVCR.TabIndex = 3;
+            this.rbVCR.TabStop = true;
+            this.rbVCR.Text = "Variación con Repetición";
+            this.rbVCR.UseVisualStyleBackColor = true;
+            this.rbVCR.CheckedChanged += new System.EventHandler(this.rbVCR_CheckedChanged);
+            // 
+            // rbVSR
+            // 
+            this.rbVSR.AutoSize = true;
+            this.rbVSR.Location = new System.Drawing.Point(452, 25);
+            this.rbVSR.Name = "rbVSR";
+            this.rbVSR.Size = new System.Drawing.Size(181, 21);
+            this.rbVSR.TabIndex = 2;
+            this.rbVSR.TabStop = true;
+            this.rbVSR.Text = "Variación sin Repetición";
+            this.rbVSR.UseVisualStyleBackColor = true;
+            this.rbVSR.CheckedChanged += new System.EventHandler(this.rbVSR_CheckedChanged);
+            // 
+            // rbPCR
+            // 
+            this.rbPCR.AutoSize = true;
+            this.rbPCR.Location = new System.Drawing.Point(214, 25);
+            this.rbPCR.Name = "rbPCR";
+            this.rbPCR.Size = new System.Drawing.Size(206, 21);
+            this.rbPCR.TabIndex = 1;
+            this.rbPCR.TabStop = true;
+            this.rbPCR.Text = "Permutación con Repetición";
+            this.rbPCR.UseVisualStyleBackColor = true;
+            this.rbPCR.CheckedChanged += new System.EventHandler(this.rbPCR_CheckedChanged);
+            // 
+            // rbPSR
+            // 
+            this.rbPSR.AutoSize = true;
+            this.rbPSR.Checked = true;
+            this.rbPSR.Location = new System.Drawing.Point(7, 25);
+            this.rbPSR.Name = "rbPSR";
+            this.rbPSR.Size = new System.Drawing.Size(201, 21);
+            this.rbPSR.TabIndex = 0;
+            this.rbPSR.TabStop = true;
+            this.rbPSR.Text = "Permutación sin Repetición";
+            this.rbPSR.UseVisualStyleBackColor = true;
+            this.rbPSR.CheckedChanged += new System.EventHandler(this.rbPSR_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(713, 249);
+            this.ClientSize = new System.Drawing.Size(910, 346);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.bReset);
             this.Controls.Add(this.bCalcular);
             this.Controls.Add(this.lExample);
@@ -240,6 +384,8 @@
             this.Text = "Técnicas";
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -269,6 +415,16 @@
         private System.Windows.Forms.Label lExample;
         private System.Windows.Forms.Button bCalcular;
         private System.Windows.Forms.Button bReset;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton rbRA;
+        private System.Windows.Forms.RadioButton rbRM;
+        private System.Windows.Forms.RadioButton rbPC;
+        private System.Windows.Forms.RadioButton rbCCR;
+        private System.Windows.Forms.RadioButton rbCSR;
+        private System.Windows.Forms.RadioButton rbVCR;
+        private System.Windows.Forms.RadioButton rbVSR;
+        private System.Windows.Forms.RadioButton rbPCR;
+        private System.Windows.Forms.RadioButton rbPSR;
     }
 }
 
