@@ -25,13 +25,16 @@ namespace Tecnicas
         /// <returns></returns>
         public int permutacionConRepeticion(int n, List<int> subconjuntos)
         {
-            int denominador = 0;
+            int denominador = 1;
 
-            foreach(int m in subconjuntos)            
-                denominador += mt.factorial(m);
+            foreach(int m in subconjuntos)
+            {
+                denominador *= mt.factorial(m);
+                Console.WriteLine(m);
+            }     
 
             if (denominador == 0)
-                return -1;
+                return 1;
 
             return mt.factorial(n) / denominador;
         }

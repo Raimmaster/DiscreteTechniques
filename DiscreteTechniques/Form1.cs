@@ -96,7 +96,19 @@ namespace DiscreteTechniques
                     resultado = tecnMath.permutacionSinRepeticion(n);
                     break;
                 case Techniques.PCR:
-                    //resultado = tecnMath.permutacionConRepeticion(Convert.ToInt32(tEntradaN.Text));
+                    List<int> subsets = new List<int>();
+                    int valor = 1;
+                    int contador = n;
+                    do
+                    {
+                        valor = Convert.ToInt32(Microsoft.VisualBasic.
+                            Interaction.InputBox(
+                            "Ingrese la cantidad de números en este subconjunto: ",
+                            "Subconjuntos", "1"));
+                        subsets.Add(valor);
+                        contador -= valor;
+                    } while (contador > 0);
+                    resultado = tecnMath.permutacionConRepeticion(n, subsets);
                     break;
                 case Techniques.VSR:
                     resultado = tecnMath.variacionSinRepeticion(n, m);
@@ -118,7 +130,7 @@ namespace DiscreteTechniques
                     break;
                 case Techniques.RA:
                     resultado = tecnMath.reglaAditiva();
-                        break;
+                    break;
             }
 
             tResultado.Text = resultado.ToString();
