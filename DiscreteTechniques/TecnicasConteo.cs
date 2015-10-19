@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace Tecnicas
 {
     public class TecnicasConteo
@@ -15,9 +17,17 @@ namespace Tecnicas
             return mt.factorial(n);
         }
 
-        public int permutacionConRepeticion(int n)
+        public int permutacionConRepeticion(int n, List<int> subconjuntos)
         {
+            int denominador = 0;
 
+            foreach(int m in subconjuntos)            
+                denominador += mt.factorial(m);
+
+            if (denominador == 0)
+                return -1;
+
+            return mt.factorial(n) / denominador;
         }
 
         public int variacionSinRepeticion(int n, int m)
