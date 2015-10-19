@@ -17,6 +17,12 @@ namespace Tecnicas
             return mt.factorial(n);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="n">Cantidad de elementos que contiene</param>
+        /// <param name="subconjuntos">Una lista que contiene subconjuntos cuya suma es n</param>
+        /// <returns></returns>
         public int permutacionConRepeticion(int n, List<int> subconjuntos)
         {
             int denominador = 0;
