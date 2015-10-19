@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace DiscreteTechniques
 {
     public partial class Form1 : Form
@@ -16,5 +17,6 @@ namespace DiscreteTechniques
         {
             InitializeComponent();
         }
+        
     }
 }

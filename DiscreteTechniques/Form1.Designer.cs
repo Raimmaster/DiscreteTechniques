@@ -30,6 +30,7 @@
         {
             this.menu = new System.Windows.Forms.MenuStrip();
             this.técnicasDeConteoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -39,21 +40,23 @@
             this.técnicasDeConteoToolStripMenuItem});
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(319, 24);
+            this.menu.Size = new System.Drawing.Size(599, 24);
             this.menu.TabIndex = 0;
             this.menu.Text = "menuStrip1";
             // 
             // técnicasDeConteoToolStripMenuItem
             // 
+            this.técnicasDeConteoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItem1});
             this.técnicasDeConteoToolStripMenuItem.Name = "técnicasDeConteoToolStripMenuItem";
             this.técnicasDeConteoToolStripMenuItem.Size = new System.Drawing.Size(122, 20);
-            this.técnicasDeConteoToolStripMenuItem.Text = "Técnicas de Conteo";
+            this.técnicasDeConteoToolStripMenuItem.Text = "Técnicas de Conteo";          
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(319, 288);
+            this.ClientSize = new System.Drawing.Size(599, 299);
             this.Controls.Add(this.menu);
             this.MainMenuStrip = this.menu;
             this.Name = "Form1";
@@ -69,6 +72,7 @@
 
         private System.Windows.Forms.MenuStrip menu;
         private System.Windows.Forms.ToolStripMenuItem técnicasDeConteoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     }
 }
 
