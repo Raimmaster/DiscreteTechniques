@@ -234,6 +234,7 @@
             this.bReset.TabIndex = 9;
             this.bReset.Text = "Reset";
             this.bReset.UseVisualStyleBackColor = true;
+            this.bReset.Click += new System.EventHandler(this.bReset_Click);
             // 
             // groupBox1
             // 
@@ -378,6 +379,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MainMenuStrip = this.menu;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";

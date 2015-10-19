@@ -63,6 +63,8 @@ namespace Tecnicas
             int numerador = mt.factorial(m + n - 1);
             int denominador = mt.factorial(n) * mt.factorial(m - 1);
 
+            Console.WriteLine("Num: " + numerador + " Dem: " + denominador);
+
             return numerador / denominador;
         }
 
