@@ -12,7 +12,7 @@ namespace Tecnicas
             mt = new MathTools();
         }
 
-        public int permutacionSinRepeticion(int n)
+        public UInt64 permutacionSinRepeticion(UInt64 n)
         {
             return mt.factorial(n);
         }
@@ -23,11 +23,11 @@ namespace Tecnicas
         /// <param name="n">Cantidad de elementos que contiene</param>
         /// <param name="subconjuntos">Una lista que contiene subconjuntos cuya suma es n</param>
         /// <returns></returns>
-        public int permutacionConRepeticion(int n, List<int> subconjuntos)
+        public UInt64 permutacionConRepeticion(UInt64 n, List<UInt64> subconjuntos)
         {
-            int denominador = 1;
+            UInt64 denominador = 1;
 
-            foreach(int m in subconjuntos)
+            foreach(UInt64 m in subconjuntos)
             {
                 denominador *= mt.factorial(m);
                 Console.WriteLine(m);
@@ -39,48 +39,48 @@ namespace Tecnicas
             return mt.factorial(n) / denominador;
         }
 
-        public int variacionSinRepeticion(int n, int m)
+        public UInt64 variacionSinRepeticion(UInt64 n, UInt64 m)
         {
-            int divisor = mt.factorial(n - m);
+            UInt64 divisor = mt.factorial(n - m);
 
             return mt.factorial(n) / divisor;
         }
 
-        public int variacionConRepeticion(int n, int m)
+        public UInt64 variacionConRepeticion(UInt64 n, UInt64 m)
         {
-            return (int)Math.Pow(n, m);
+            return (UInt64)Math.Pow(n, m);
         }
 
-        public int combinacionSinRepeticion(int n, int m)
+        public UInt64 combinacionSinRepeticion(UInt64 n, UInt64 m)
         {
-            int divisor = mt.factorial(m) * mt.factorial(n - m);
+            UInt64 divisor = mt.factorial(m) * mt.factorial(n - m);
 
             return mt.factorial(n) / divisor;
         }
 
-        public int combinacionConRepeticion(int n, int m)
+        public UInt64 combinacionConRepeticion(UInt64 n, UInt64 m)
         {
-            int numerador = mt.factorial(m + n - 1);
-            int denominador = mt.factorial(n) * mt.factorial(m - 1);
+            UInt64 numerador = mt.factorial(m + n - 1);
+            UInt64 denominador = mt.factorial(n) * mt.factorial(m - 1);
 
             Console.WriteLine("Num: " + numerador + " Dem: " + denominador);
 
             return numerador / denominador;
         }
 
-        public int permutacionCircular(int n)
+        public UInt64 permutacionCircular(UInt64 n)
         {
             return mt.factorial(n - 1);
         }
 
-        public int reglaMultiplicativa(int k)
+        public UInt64 reglaMultiplicativa(UInt64 k)
         {
-            return -1;
+            return 0;
         }
 
-        public int reglaAditiva()
+        public UInt64 reglaAditiva()
         {
-            return -1;
+            return 0;
         }
     }
 
@@ -91,7 +91,7 @@ namespace Tecnicas
 
         }
 
-        public int factorial(int numero)
+        public UInt64 factorial(UInt64 numero)
         {
             if (numero == 0)
                 return 1;

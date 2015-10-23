@@ -74,7 +74,7 @@
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
             this.menu.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.menu.Size = new System.Drawing.Size(910, 28);
+            this.menu.Size = new System.Drawing.Size(1000, 28);
             this.menu.TabIndex = 0;
             this.menu.Text = "menuStrip1";
             // 
@@ -204,7 +204,7 @@
             // 
             this.tResultado.Location = new System.Drawing.Point(143, 133);
             this.tResultado.Name = "tResultado";
-            this.tResultado.Size = new System.Drawing.Size(64, 22);
+            this.tResultado.Size = new System.Drawing.Size(178, 22);
             this.tResultado.TabIndex = 6;
             this.tResultado.Text = "0";
             // 
@@ -247,7 +247,7 @@
             this.groupBox1.Controls.Add(this.rbVSR);
             this.groupBox1.Controls.Add(this.rbPCR);
             this.groupBox1.Controls.Add(this.rbPSR);
-            this.groupBox1.Location = new System.Drawing.Point(234, 56);
+            this.groupBox1.Location = new System.Drawing.Point(327, 48);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(664, 137);
             this.groupBox1.TabIndex = 11;
@@ -367,7 +367,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(910, 346);
+            this.ClientSize = new System.Drawing.Size(1000, 346);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.bReset);
             this.Controls.Add(this.bCalcular);
