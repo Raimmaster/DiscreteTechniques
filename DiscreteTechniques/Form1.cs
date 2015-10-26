@@ -23,7 +23,7 @@ namespace DiscreteTechniques
         TecnicasConteo tecnMath;
         Techniques tecnActual;
         string[] ejemplos;
-        private static UInt64 CANT_EJEMPLOS = 9;
+        private static int CANT_EJEMPLOS = 9;
 
         public void reset(Techniques tec)
         {
@@ -35,7 +35,7 @@ namespace DiscreteTechniques
                     break;
                 case Techniques.PCR:
                     tEntradaN.Text = "8";
-                    List<UInt64> subsets = new List<UInt64>();
+                    List<double> subsets = new List<double>();
                     subsets.Add(3);
                     subsets.Add(2);
                     tResultado.Text = tecnMath.permutacionConRepeticion(8, subsets).ToString();
@@ -82,12 +82,12 @@ namespace DiscreteTechniques
             ejemplos[0] = "E.g, ¿De cuántas se pueden formar 6 personas para abordar el autobús?";
             ejemplos[1] = "E.g, ¿Cuántas permutaciones se pueden hacer con la palabra infinito?";
             ejemplos[2] = "E.g, En un concurso nacional de programación, hay 8 finalistas. \nEncuentre el número de ordenamientos posibles al final del concurso para las primeras tres posiciones?";
-            ejemplos[3] = "E.g, ¿En cuántas formas distUInt64as se puede responder una prueba de verdadero o falso que consta de 9 preguntas?";
+            ejemplos[3] = "E.g, ¿En cuántas formas distdoubleas se puede responder una prueba de verdadero o falso que consta de 9 preguntas?";
             ejemplos[4] = "E.g, ¿Cuántas formas hay para seleccionar a 3 candidatos de 8 recien graduados \nigualmente calificados para las vacantes de una empresa?";
             ejemplos[5] = "E.g, Considere el siguiente segmento de un programa en Pascal, donde i, j, k son variables enteras. For i = 1 to 20 do \n    For j = 1 to i do \n For k = 1 to j do \n writeln(i*j + k)\n ¿Cuántas veces se repite writeln?";
-            ejemplos[6] = "E.g, ¿De cuántas maneras se pueden plantar 5 árboles distUInt64os en un redondel?";
+            ejemplos[6] = "E.g, ¿De cuántas maneras se pueden plantar 5 árboles distdoubleos en un redondel?";
             ejemplos[7] = "E.g, Marco va armar una computadora por sí mismo. \nTiene la opción de comprar los chips entre 2 marcas, un disco duro de 4 marcas, la memoria de tres marcas, \ny un conjunto de accesorios en 5 tiendas locales. \n¿De cuántas formas diferentes puede Marco comprar las partes de la computadora?";
-            ejemplos[8] = "¿De cuántas maneras se pueden seleccionar 2 libros de temas diferentes entre 5 libros de computación distUInt64os, \n3 libros de matemáticas diferentes y 2 libros de arte distUInt64os?";
+            ejemplos[8] = "¿De cuántas maneras se pueden seleccionar 2 libros de temas diferentes entre 5 libros de computación distdoubleos, \n3 libros de matemáticas diferentes y 2 libros de arte distdoubleos?";
 
             lExample.Text = ejemplos[0];
             reset(tecnActual);
@@ -167,21 +167,21 @@ namespace DiscreteTechniques
 
         private void bCalcular_Click(object sender, EventArgs e)
         {
-            UInt64 resultado = 0;
-            UInt64 n = Convert.ToUInt64(tEntradaN.Text);
-            UInt64 m = Convert.ToUInt64(tEntradaM.Text);
+            double resultado = 0;
+            double n = Convert.ToDouble(tEntradaN.Text);
+            double m = Convert.ToDouble(tEntradaM.Text);
             switch (tecnActual)
             {
                 case Techniques.PSR:
                     resultado = tecnMath.permutacionSinRepeticion(n);
                     break;
                 case Techniques.PCR:
-                    List<UInt64> subsets = new List<UInt64>();
-                    UInt64 valor = 1;
-                    UInt64 contador = n;
+                    List<double> subsets = new List<double>();
+                    double valor = 1;
+                    double contador = n;
                     do
                     {
-                        valor = Convert.ToUInt64(Microsoft.VisualBasic.
+                        valor = Convert.ToDouble(Microsoft.VisualBasic.
                             Interaction.InputBox(
                             "Ingrese la cantidad de números en este subconjunto: ",
                             "Subconjuntos", "1"));
