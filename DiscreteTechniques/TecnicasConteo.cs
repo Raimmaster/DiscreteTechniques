@@ -73,14 +73,26 @@ namespace Tecnicas
             return mt.factorial(n - 1);
         }
 
-        public double reglaMultiplicativa(double k)
+        public double reglaMultiplicativa(List<double> subconjuntos)
         {
-            return 0;
+            double tot = 1;
+            foreach(double n in subconjuntos)
+            {
+                tot *= n;
+            }
+
+            return tot;
         }
 
-        public double reglaAditiva()
+        public double reglaAditiva(List<double> subconjuntos)
         {
-            return 0;
+            double tot = 0;
+            foreach (double n in subconjuntos)
+            {
+                tot += n;
+            }
+
+            return tot;
         }
     }
 

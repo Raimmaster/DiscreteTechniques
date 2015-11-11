@@ -64,7 +64,7 @@ namespace DiscreteTechniques
                     tEntradaN.Text = "5";
                     bCalcular_Click(null, null);
                     break;
-                case Techniques.RM:
+                case Techniques.RM: 
                     break;
                 case Techniques.RA:
                     break;
@@ -165,29 +165,57 @@ namespace DiscreteTechniques
             reset(tecnActual);
         }
 
+        //
+        // Summary:
+        //     Gets a List<double> from an InputBox
+        //
+        // Parameters:
+        //   cant_iterations:
+        //     Amount of times it should fill in the sets
+        //
+        // Returns:
+        //     A List<double> with all the subsets used for the calculations
+        //
+        private List<double> getSubSet(double cant_iterations)
+        {
+            List<double> subsets = new List<double>();
+            double valor = 1;
+            int iteration = 1;
+            
+            do
+            {
+                valor = Convert.ToDouble(Microsoft.VisualBasic.
+                    Interaction.InputBox(
+                    "Ingrese la cantidad de números en el subconjunto " + iteration++ + ": ",
+                    "Subconjuntos", "1"));
+                subsets.Add(valor);
+                switch (tecnActual)
+                {
+                    case Techniques.PCR:
+                        cant_iterations -= valor;
+                        break;
+                    default:
+                        cant_iterations--;
+                        break;
+                }
+            } while (cant_iterations > 0);
+
+            return subsets;
+        }
+
         private void bCalcular_Click(object sender, EventArgs e)
         {
             double resultado = 0;
             double n = Convert.ToDouble(tEntradaN.Text);
             double m = Convert.ToDouble(tEntradaM.Text);
+            List<double> subsets;
             switch (tecnActual)
             {
                 case Techniques.PSR:
                     resultado = tecnMath.permutacionSinRepeticion(n);
                     break;
                 case Techniques.PCR:
-                    List<double> subsets = new List<double>();
-                    double valor = 1;
-                    double contador = n;
-                    do
-                    {
-                        valor = Convert.ToDouble(Microsoft.VisualBasic.
-                            Interaction.InputBox(
-                            "Ingrese la cantidad de números en este subconjunto: ",
-                            "Subconjuntos", "1"));
-                        subsets.Add(valor);
-                        contador -= valor;
-                    } while (contador > 0);
+                    subsets = getSubSet(n);
                     resultado = tecnMath.permutacionConRepeticion(n, subsets);
                     break;
                 case Techniques.VSR:
@@ -206,10 +234,12 @@ namespace DiscreteTechniques
                     resultado = tecnMath.permutacionCircular(n);
                     break;
                 case Techniques.RM:
-                    resultado = tecnMath.reglaMultiplicativa(n);
+                    subsets = getSubSet(n);
+                    resultado = tecnMath.reglaMultiplicativa(subsets);
                     break;
                 case Techniques.RA:
-                    resultado = tecnMath.reglaAditiva();
+                    subsets = getSubSet(n);
+                    resultado = tecnMath.reglaAditiva(subsets);
                     break;
             }
 

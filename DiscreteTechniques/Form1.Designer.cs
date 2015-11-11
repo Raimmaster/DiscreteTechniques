@@ -383,7 +383,7 @@
             this.MainMenuStrip = this.menu;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
-            this.Text = "Técnicas";
+            this.Text = "Técnicas by Raim Interiano";
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
             this.groupBox1.ResumeLayout(false);
